@@ -1,5 +1,5 @@
 command: """
-    network-throughput.widget/lib/network.sh
+    network.widget/lib/network.sh
 """
 refreshFrequency: 2000
 
@@ -14,7 +14,6 @@ render: -> """
 """
 
 update: (output, domEl) ->
-
     usage = (bytes) ->
         kb = bytes / 1024
         usageFormat kb
