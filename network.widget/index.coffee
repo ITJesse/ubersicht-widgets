@@ -14,6 +14,7 @@ render: -> """
 """
 
 update: (output, domEl) ->
+
     usage = (bytes) ->
         kb = bytes / 1024
         usageFormat kb
