@@ -26,5 +26,5 @@ style: """
   overflow: hidden
   white-space: nowrap
   top: 6px
-  width: 750px
+  width: 550px
 """

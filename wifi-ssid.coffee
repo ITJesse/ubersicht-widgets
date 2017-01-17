@@ -7,6 +7,7 @@ render: (output) ->
   <link rel="stylesheet" href="./assets/font-awesome/css/font-awesome.min.css" />
   <div class="ssid">
     <span class="icon"></span>
+    &nbsp;
     <span class="fa"></span>
   </div>
   """
@@ -30,7 +31,7 @@ style: """
   color: #d5c4a1
   font: 12px Input
   height: 16px
-  right: 430px
+  right: 480px
   top: 6px
   width: auto
 """

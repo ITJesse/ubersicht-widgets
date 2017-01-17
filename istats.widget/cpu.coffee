@@ -7,6 +7,7 @@ render: (output) ->
   <link rel="stylesheet" href="./assets/font-awesome/css/font-awesome.min.css" />
   <div class="cpu">
     <span class="icon"></span>
+    &nbsp;
     <span class="fa"></span>
   </div>
   """
@@ -15,7 +16,7 @@ update: (output, el) ->
     cpu = Math.floor(output);
     if cpu > 100
       cpu = 100 
-    $(".cpu span:nth-child(2)", el).text(" #{cpu}")
+    $(".cpu span:nth-child(2)", el).text("#{cpu}")
     $icon = $(".cpu span.icon", el)
     $icon.removeClass().addClass("icon")
     $icon.addClass("fa fa-bar-chart")
@@ -25,7 +26,7 @@ style: """
   color: #d5c4a1
   font: 12px Input
   overflow: hidden
-  right: 245px
+  right: 290px
   top: 6px
   width: 60px
   white-space: nowrap

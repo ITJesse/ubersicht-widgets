@@ -7,12 +7,13 @@ render: (output) ->
   <link rel="stylesheet" href="./assets/font-awesome/css/font-awesome.min.css" />
   <div class="time">
     <span class="icon fa fa-clock-o"></span>
+    &nbsp;
     <span class="fa"></span>
   </div>
   """
 
 update: (output, el) ->
-    $(".time span:nth-child(2)", el).text(" #{output}")
+    $(".time span:nth-child(2)", el).text("#{output}")
 
 style: """
   -webkit-font-smoothing: antialiased
