@@ -44,7 +44,7 @@ style: """
   -webkit-font-smoothing: antialiased
   color: #d5c4a1
   font: 12px Input
-  left: 50%
+  left: 40%
   transform: translateX(-50%)
   top: 5px
   width: auto

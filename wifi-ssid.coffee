@@ -33,5 +33,7 @@ style: """
   height: 16px
   right: 480px
   top: 6px
+  overflow: hidden
   width: auto
+  max-width: 140px
 """

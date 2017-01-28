@@ -6,7 +6,7 @@ render: (output) ->
   """
   <link rel="stylesheet" href="./assets/font-awesome/css/font-awesome.min.css" />
   <div class="cpu">
-    <span class="icon"></span>
+    <span class="fa fa-tasks"></span>
     &nbsp;
     <span class="fa"></span>
   </div>
@@ -17,9 +17,6 @@ update: (output, el) ->
     if cpu > 100
       cpu = 100 
     $(".cpu span:nth-child(2)", el).text("#{cpu}")
-    $icon = $(".cpu span.icon", el)
-    $icon.removeClass().addClass("icon")
-    $icon.addClass("fa fa-bar-chart")
 
 style: """
   -webkit-font-smoothing: antialiased

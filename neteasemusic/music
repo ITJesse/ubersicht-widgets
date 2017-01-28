@@ -1,0 +1,36 @@
+#!/usr/local/bin/node
+
+const fs = require('fs');
+const path = require('path');
+const moment = require('moment');
+const execSync = require('child_process').execSync;
+
+const processList = execSync('ps -A');
+if(processList.toString().indexOf('NeteaseMusic.app') === -1) {
+  return;
+}
+
+const log = path.resolve(process.env.HOME, './Library/Containers/com.netease.163music/Data/Documents/storage/Logs/music.163.log');
+
+let info = '';
+let index;
+
+fs.readFile(log, 'utf-8', (err, data) => {
+  if (err) return;
+  const lines = data.trim().split('\n');
+  for (let i = lines.length - 1; i >= 0; i--) {
+    index = lines[i].indexOf('player._$load');
+    if (index !== -1) {
+      info = lines[i];
+      break;
+    }
+  }
+  if (info.length > 0) {
+    const time = moment(/\[(.*?)\]/.exec(info)[1], 'YYYY-M-D H:m:s');
+    const now = moment();
+    const json = JSON.parse(info.substr(index + 17));
+    if(time.add(json.duration, 's').isAfter(now)) {
+      console.log(JSON.stringify(json));
+    }
+  }
+});
